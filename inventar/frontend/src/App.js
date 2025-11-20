@@ -18,7 +18,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
+          {/* <Route path="/register" element={<Register />} /> */}
           <Route path="/login" element={<Login />} />
           
           <Route path="/admin" element={
@@ -27,7 +27,7 @@ function App() {
             // </ProtectedRoute>
             } />
           <Route path="/qr/:id" element={<QrPage />} />
-        <Route path="/singlePage/:id" element={<SinglePage />} />
+        <Route path="/single-product/:id" element={<SinglePage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

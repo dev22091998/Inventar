@@ -145,7 +145,7 @@ function Admin() {
           setCurrentPage(1);
         }}
       >
-        Dashboard
+        Admin
       </button>
     </li>
 
@@ -156,7 +156,7 @@ function Admin() {
         }`}
         onClick={() => setActivePage("addproduct")}
       >
-        Add Product
+        Maxsulot qo'shish
       </button>
     </li>
 
@@ -167,7 +167,7 @@ function Admin() {
         }`}
         onClick={() => setActivePage("users")}
       >
-        Users
+        Foydalanuvchi
       </button>
     </li>
   </ul>
@@ -179,7 +179,7 @@ function Admin() {
         {/* Dashboard */}
         {activePage === "dashboard" && (
           <>
-            <h3>Products</h3>
+            <h3>AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhatiF</h3>
 
             <Search search={search} setSearch={setSearch} placeholder="Search..." />
 
@@ -319,7 +319,7 @@ function Admin() {
         {/* Add product */}
         {activePage === "addproduct" && (
           <>
-            <h3>Add New product</h3>
+            <h3>Yangi maxsulot qo'shish</h3>
 
             <form className="mb-4" onSubmit={addproduct}>
               <div className="row g-3 mb-3">

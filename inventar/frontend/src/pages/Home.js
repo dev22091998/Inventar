@@ -42,7 +42,7 @@ function Home() {
 
   // 1) ko'z tugmasi -> singlePage route ga o'tish
   const viewSingle = (id) => {
-    navigate(`/singlePage/${id}`);
+    navigate(`/single-product/${id}`);
   };
 
   // 2) QR PDF yaratish (ichida singlePage manzili kodlanadi)
@@ -81,7 +81,7 @@ function Home() {
 
   return (
         <div className="container mt-4">
-      <h3 className="mb-3 text-center">Products</h3>
+      <h3 className="mb-3 text-center">AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhati</h3>
 
       <Search search={search} setSearch={setSearch} placeholder="Search products..." />
 
@@ -107,7 +107,12 @@ function Home() {
               currentItems.map((product, i) => (
                 <tr key={product._id}>
                   <td className="text-center">{indexFirst + i + 1}</td>
-                  <td>{product.name}</td>
+                  <td style={{
+                    maxWidth: "150px", // kerakli kenglik
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis"
+                  }}>{product.name}</td>
                   <td>{product.category}</td>
                   <td>{product.inventory}</td>
                   <td>{product.employee}</td>

@@ -36,17 +36,17 @@ function Navbar() {
                     Login
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="btn btn-warning fw-semibold px-3" to="/register">
                     Register
                   </Link>
-                </li>
+                </li> */}
               </>
             ) : (
               <>
                 <li className="nav-item me-2">
                   <Link className="btn btn-light fw-semibold px-3" to="/admin">
-                    Dashboard
+                    Admin
                   </Link>
                 </li>
                 <li className="nav-item">

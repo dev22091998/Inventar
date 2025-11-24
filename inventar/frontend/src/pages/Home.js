@@ -4,6 +4,8 @@ import API from "../services/api";
 import Search from "../components/Search";
 import QRCode from "qrcode"; // npm i qrcode
 import { jsPDF } from "jspdf";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 
 function Home() {   
   const navigate = useNavigate();
@@ -79,6 +81,31 @@ function Home() {
         }
       };
 
+      const downloadExcel = () => {
+  // jadvalda filtrlangan barcha mahsulotlar (faqat current page emas)
+  const dataToExport = filtered.map((item, index) => ({
+    "#": index + 1,
+    "Nomi": item.name,
+    "Categoriyasi": item.category,
+    "Inventar raqami": item.inventory,
+    "Foydalanuvchi": item.employee,
+    "Bo'limi": item.section,
+    "Eski inventar nomeri": item.old_inventory,
+    "Lan mac addresi": item.mac_lan,
+    "Wifi mac addresi": item.mac_wifi
+  }));
+
+  const worksheet = XLSX.utils.json_to_sheet(dataToExport);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Products");
+
+  const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+  const blob = new Blob([excelBuffer], { type: "application/octet-stream" });
+
+  saveAs(blob, "products.xlsx");
+};
+
+
   return (
         <div className="container mt-4">
       <h3 className="mb-3 text-center">AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhati</h3>
@@ -142,6 +169,11 @@ function Home() {
           </tbody>
         </table>
       </div>
+      <div className="text-end mb-3">
+  <button className="btn btn-success" onClick={downloadExcel}>
+    ⬇️ Download Excel
+  </button>
+</div>
 
       {/* pagination */}
       <nav>

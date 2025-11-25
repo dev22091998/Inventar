@@ -84,6 +84,7 @@ function SinglePage() {
           <p><strong>Bo'limi:</strong> {product.section}</p>
           <p><strong>Lan Mac addressi: </strong> {product.mac_lan}</p>
           <p><strong>Wifi Mac addressi: </strong> {product.mac_wifi}</p>
+          <p><strong>Xarakteristikasi: </strong> {product.description}</p>
           {/* <p><strong>Status:</strong> {product.status || "Pending"}</p> */}
           {product.createdAt && <p><strong>Created:</strong> {new Date(product.createdAt).toLocaleString()}</p>}
           {product.updatedAt && <p><strong>Updated:</strong> {new Date(product.updatedAt).toLocaleString()}</p>}

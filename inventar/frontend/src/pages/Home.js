@@ -110,7 +110,7 @@ function Home() {
         <div className="container mt-4">
       <h3 className="mb-3 text-center">AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhati</h3>
 
-      <Search search={search} setSearch={setSearch} placeholder="Search products..." />
+      <Search search={search} setSearch={setSearch} placeholder="Qidirish..." />
 
       <div className="table-responsive">
         <table className="table table-striped table-bordered align-middle">

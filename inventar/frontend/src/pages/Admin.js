@@ -179,9 +179,9 @@ function Admin() {
         {/* Dashboard */}
         {activePage === "dashboard" && (
           <>
-            <h3>AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhatiF</h3>
+            <h3>AUTORUBBER korxonasi Axborot texnologiyalari bo'linmasi xisobidagi moddiy boyliklar ro'yhati</h3>
 
-            <Search search={search} setSearch={setSearch} placeholder="Search..." />
+            <Search search={search} setSearch={setSearch} placeholder="Qidirish..." />
 
             <div className="table-responsive">
               <table className="table table-striped table-bordered align-middle">
@@ -225,12 +225,6 @@ function Admin() {
                           >
                             Edit
                           </button>
-                          {/* <button
-                            className="btn btn-sm btn-danger"
-                            onClick={() => deleteproduct(product._id)}
-                          >
-                            Delete
-                          </button> */}
                           <button
                             className="btn btn-sm btn-danger"
                             onClick={() => {
